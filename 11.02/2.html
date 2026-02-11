@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<head>
+    <title>Задание 2</title>
+    <link rel="stylesheet" href="ext_style.css">
+    <style>
+    .internal-demo {
+        background-color: #fff3cd;
+        border: 2px dashed #856404;
+        color: #856404;
+        padding: 15px;
+        margin-top: 20px;
+        border-radius: 10px;
+    }
+    .internal-demo h2 {
+        color: #d39e00;
+        text-align: center;
+    }
+    .internal-demo p {
+        font-style: italic;
+    }
+    .pseudo-demo a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+    }
+    .pseudo-demo a:hover { 
+    color: #ff6b6b;
+    text-decoration: underline;
+    }
+    .pseudo-demo input:focus { 
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0,123,255,0.5);
+    }
+    .pseudo-demo p:not(.special) { 
+    font-size: 0.9em;
+    color: #666;
+    }
+    .pseudo-demo .decorated::before {
+    content: "🤙"; 
+    font-size: 1.2em;
+    }
+    .pseudo-demo .decorated::after {
+    content: "🤙"; 
+    font-size: 1.2em;
+    }
+    .pseudo-demo .text-block::first-letter { 
+    font-size: 3em;
+    float: left;
+    line-height: 1;
+    margin-right: 5px;
+    color: #17a2b8;
+    font-weight: bold;
+    }
+    .pseudo-demo .text-block::first-line { 
+    font-variant: small-caps;
+    font-weight: bold;
+    color: #343a40;
+    }
+    .toggle-container {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #ced4da;
+    }
+    #toggle-checkbox {
+    display: none;
+    }
+    .toggle-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    }
+    .toggle-label:hover {
+    background-color: #0056b3;
+    }
+    .toggle-box {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #e9ecef;
+    border-left: 5px solid #6c757d;
+    transition: all 0.3s;
+    }
+    #toggle-checkbox:checked ~ .toggle-box {
+    background-color: #d4edda;
+    color: green;
+    font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+    <div class="external-demo">
+        <h2>Внешние стили и @import</h2>
+        <p>Блок оформлен с помощью внешнего файла ext_style.css</p>
+        <p>Заголовок H2 получил подчеркивание и цвет из файла import_styles.css, который был загружен в CSS-файл с помощью @import</p>
+    </div>
+    <div class="internal-demo">
+        <h2>Внутренние стили</h2>
+        <p>Блок оформлен с помощью внутренней таблицы стилей</p>
+    </div>
+    <div>
+        <h2>Встроенные стили</h2>
+        <p style="background-color: #d4edda; color: #155724; border: 2px solid #c3e6cb; padding: 15px; font-weight: bold; text-align: center;">
+            Этот абзац сделан исключительно с помощью атрибута style, он имеет наивысший приоритет 
+        </p>
+        <p style="color: #721c24; background-color: #f8d7da; padding: 10px;">
+            Второй абзац со своим встроенным стилем.
+        </p>
+    </div>
+    <div class="pseudo-demo">
+        <h2>Псевдоклассы и Псевдоэлементы</h2>
+
+        <h3>Псевдоклассы:</h3>
+        <p><a href="#">Курсор здесь</a></p>
+        <p><input type="text" placeholder="Кликните сюда"></p>
+        <p>Обычный абзац (стиль применён через p:not(.special))</p>
+        <p class="special">Абзац, на который правило с :not() не распространяется</p>
+
+        <h3>Псевдоэлементы</h3>
+        <p class="decorated">Этот абзац оформлен с помощью ::before и ::after</p>
+        <div class="text-block">
+        Этот блок текста сделан с помощью ::first-letter и ::first-line.
+        </div>
+    </div>
+    <div class="toggle-container">
+    <h3>Реакция html на клик с помощью :checked:</h3>
+    <input type="checkbox" id="toggle-checkbox">
+    <label for="toggle-checkbox" class="toggle-label">Клик</label>
+    <div class="toggle-box">
+    </div>
+    <div class="status-text" style="margin-top: 15px;"></div>
+    </div>        
+</body>
+</html>
