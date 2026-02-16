@@ -1,0 +1,72 @@
+<html>
+<head>
+<title>Форма заявки</title>
+</head>
+<body>
+<form action="server.php" method="post">
+<fieldset>
+<legend>Заявка на курс программирования</legend>
+<label for="name">Имя:</label><br>
+<input type="text" id="name" name="name" size="25"><br><br>
+<label for="phone">Телефон:</label><br>
+<input type="text" id="phone" name="phone"><br><br>
+<label>Выберите формат обучения:</label><br>
+<input type="radio" name="format" value="online"> Онлайн
+<input type="radio" name="format" value="offline"> Очно
+<br><br>
+<label>Дополнительно:</label><br>
+<input type="checkbox" name="certificate" value="yes"> Нужен сертификат<br>
+<input type="checkbox" name="practice" value="yes"> Нужна практика<br><br>
+<label for="course">Курс:</label><br>
+<select name="course" id="course">
+<option value="html">HTML</option>
+<option value="css">CSS</option>
+<option value="js">JavaScript</option>
+</select>
+<br><br>
+<input type="submit" value="Отправить заявку">
+<input type="reset" value="Очистить">
+</fieldset>
+</form>
+<hr>
+<form action="server.php" method="post">
+<fieldset>
+<legend>Анкета студента</legend>
+<label for="age">Возраст:</label><br>
+<input type="text" name="age"><br><br>
+<label for="about">О себе:</label><br>
+<textarea name="about" rows="4" cols="30"></textarea><br><br>
+<label>Опыт программирования:</label><br>
+<input type="radio" name="exp" value="no"> Отсутствует<br>
+<input type="radio" name="exp" value="basic"> Начальный<br>
+<input type="radio" name="exp" value="middle"> Средний<br><br>
+<label>Какие языки знаете:</label><br>
+<input type="checkbox" name="lang" value="c++"> C++<br>
+<input type="checkbox" name="lang" value="python"> Python<br>
+<input type="checkbox" name="lang" value="java"> Java<br><br>
+<input type="submit" value="Отправить анкету">
+</fieldset>
+</form>
+<hr>
+<form action="server.php" method="post">
+<fieldset>
+<legend>Регистрация пользователя</legend>
+<label for="login">Логин:</label><br>
+<input type="text" name="login"><br><br>
+<label for="pass">Пароль:</label><br>
+<input type="password" name="pass"><br><br>
+<label for="email">Email:</label><br>
+<input type="text" name="email"><br><br>
+<input type="hidden" name="role" value="student">
+<label for="city">Город:</label><br>
+<select name="city">
+<option>Москва</option>
+<option>Минск</option>
+<option>Казань</option>
+</select>
+<br><br>
+<input type="submit" value="Зарегистрироваться">
+</fieldset>
+</form>
+</body>
+</html>
